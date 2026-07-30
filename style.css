@@ -8,7 +8,7 @@ body {
     text-align: center;
     
     /* Tambahkan baris di bawah ini */
-    background-image: url('images.jpg');
+    background-image: url('i.jpg');
     background-size: cover;        /* Agar gambar memenuhi seluruh layar */
     background-position: center;   /* Posisi gambar tepat di tengah */
     background-repeat: no-repeat;  /* Agar gambar tidak berulang/berpetak */
