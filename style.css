@@ -65,10 +65,31 @@ body {
     transition: all 0.3s ease;
 }
 
-/* Efek saat tombol di-hover (diarahin kursor) */
-.btn-open:hover {
-    background-color: #6e6252; /* Warna sedikit lebih gelap saat di-hover */
-    transform: translateY(-2px); /* Efek terangkat sedikit */
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+.btn-copy {
+    display: inline-block;
+    padding: 8px 20px;
+    margin-top: 10px;
+    
+    /* Warna & Tipografi */
+    background-color: #8b7d6b; /* Senada dengan tema gold pastel kamu */
+    color: #ffffff;
+    font-family: 'Playfair Display', serif;
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+    
+    /* Border & Kelengkungan */
+    border: none;
+    border-radius: 20px; /* Membuat sudut tombol melengkung halus */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Bayangan lembut */
+    
+    /* Efek Interaksi */
+    cursor: pointer;
+    transition: all 0.3s ease;
 }
+
+/* Efek Hover (Saat Kursor Diarahkan) */
+.btn-copy:hover {
+    background-color: #6e6252;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
