@@ -7,19 +7,26 @@ window.addEventListener('DOMContentLoaded', () => {
     }
 });
 
-// 2. Fungsi Buka Undangan & Autoplay Musik
-function openInvitation() {
-    // Scroll ke section berikutnya secara mulus
-    document.querySelector('.couples').scrollIntoView({ behavior: 'smooth' });
-    
-    // Putar musik
-    document.addEventListener('DOMContentLoaded', function() {
-    const btnBuka = document.getElementById('btn-buka'); // Sesuai ID tombol Anda
-    const music = document.getElementById('bg-music');    // Sesuai ID audio Anda
+// 2. Fungsi Buka Undangan & Play Musik
+document.addEventListener('DOMContentLoaded', function() {
+    const btnBuka = document.getElementById('btn-buka'); // Sesuaikan ID tombol
+    const music = document.getElementById('bg-music');   // Sesuaikan ID audio
 
     if (btnBuka && music) {
         btnBuka.addEventListener('click', function() {
-            music.play().then(()
+            // Putar audio
+            music.play().catch(function(error) {
+                console.log("Autoplay dicegah browser:", error);
+            });
+            
+            // Scroll ke section berikutnya
+            const couplesSection = document.querySelector('.couples');
+            if (couplesSection) {
+                couplesSection.scrollIntoView({ behavior: 'smooth' });
+            }
+        });
+    }
+});
 }
 
 // 3. Salin Nomor Rekening
