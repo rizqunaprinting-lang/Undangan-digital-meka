@@ -13,8 +13,23 @@ function openInvitation() {
     document.querySelector('.couples').scrollIntoView({ behavior: 'smooth' });
     
     // Putar musik
-    const music = document.getElementById('bg-music');
-    music.play();
+    document.addEventListener('DOMContentLoaded', function() {
+    const btnBuka = document.getElementById('btn-buka'); // Sesuai ID tombol Anda
+    const music = document.getElementById('bg-music');    // Sesuai ID audio Anda
+
+    if (btnBuka && music) {
+        btnBuka.addEventListener('click', function() {
+            music.play().then(() => {
+                console.log("Musik berhasil diputar!");
+            }).catch(error => {
+                console.error("Gagal memutar musik:", error);
+            });
+            
+            // Kode tambahan: biasanya untuk menyembunyikan sampul depan / scroll ke konten
+            // document.getElementById('cover-section').style.display = 'none'; 
+        });
+    }
+});
 }
 
 // 3. Salin Nomor Rekening
