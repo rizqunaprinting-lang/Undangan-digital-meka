@@ -19,17 +19,7 @@ function openInvitation() {
 
     if (btnBuka && music) {
         btnBuka.addEventListener('click', function() {
-            music.play().then(() => {
-                console.log("Musik berhasil diputar!");
-            }).catch(error => {
-                console.error("Gagal memutar musik:", error);
-            });
-            
-            // Kode tambahan: biasanya untuk menyembunyikan sampul depan / scroll ke konten
-            // document.getElementById('cover-section').style.display = 'none'; 
-        });
-    }
-});
+            music.play().then(()
 }
 
 // 3. Salin Nomor Rekening
