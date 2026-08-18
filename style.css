@@ -178,3 +178,27 @@ h2 {
     -1px  1px 0 #ffffff,
      1px  1px 0 #ffffff;
 }
+/* 1. Kondisi awal elemen di dalam section couples (sembunyi di sebelah kiri) */
+.couples p, 
+.couples h2, 
+.couples .ampersand {
+  opacity: 0;
+  transform: translateX(-80px); /* Digeser ke kiri dulu */
+  transition: opacity 0.8s ease, transform 0.8s ease; /* Durasi animasi */
+}
+
+/* 2. Kondisi saat class 'show' ditambahkan via JavaScript (bergeser ke kanan ke posisi normal) */
+.couples.show p,
+.couples.show h2,
+.couples.show .ampersand {
+  opacity: 1;
+  transform: translateX(0); /* Kembali ke posisi semula (slide ke kanan) */
+}
+
+/* 3. (Opsional) Memberi jeda waktu berurutan antar baris agar lebih estetik */
+.couples.show p:nth-of-type(1) { transition-delay: 0.2s; } /* Kutipan */
+.couples.show h2:nth-of-type(1) { transition-delay: 0.4s; } /* Nama Wanita */
+.couples.show p:nth-of-type(2) { transition-delay: 0.5s; } 
+.couples.show .ampersand       { transition-delay: 0.6s; } /* Tanda & */
+.couples.show h2:nth-of-type(2) { transition-delay: 0.7s; } /* Nama Pria */
+.couples.show p:nth-of-type(4) { transition-delay: 0.8s; }
