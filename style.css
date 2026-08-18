@@ -132,18 +132,28 @@ body {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
+@font-face {
+  font-family: 'CooperFont';
+  src: url('Cooper.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'Freeh521Font';
+  src: url('freeh521.ttf') format('truetype');
+}
+
 .hero .title {
-  font-family: 'Cooper.otf', serif;
+  font-family: 'CooperFont', serif;
 }
 
 h2 {
-  font-family: 'Freeh521.ttf', sans-serif; /* Ganti 'Poppins' dengan nama font yang Anda inginkan */
+  font-family: 'Freeh521Font', sans-serif;
 }
 
 p {
-    font-family: Arial, sans-serif;
-    font-weight: bold;
-    font-style: italic;
+  font-family: Arial, sans-serif;
+  font-weight: bold;
+  font-style: italic;
 }
 
 h2 {
