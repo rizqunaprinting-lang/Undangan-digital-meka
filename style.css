@@ -178,3 +178,21 @@ h2 {
     -1px  1px 0 #ffffff,
      1px  1px 0 #ffffff;
 }
+/* 1. Atur animasi slide ke kanan saat scroll */
+.couples {
+  /* Mengikat animasi ke gerakan scroll halaman */
+  animation: slideKeKanan linear both;
+  animation-timeline: view();
+  animation-range: entry 10% cover 40%;
+}
+
+/* 2. Definisi titik awal (kiri/tersembunyi) dan titik akhir (posisi normal) */
+@keyframes slideKeKanan {
+  from {
+    opacity: 0;
+    transform: translateX(-100px); /* Mulai dari posisi agak ke kiri */
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0); /* Berakhir di posisi semula (geser ke kanan) */
+  }
