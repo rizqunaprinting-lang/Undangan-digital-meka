@@ -22,3 +22,19 @@ function copyAccount(accountNumber) {
     navigator.clipboard.writeText(accountNumber);
     alert("Nomor rekening berhasil disalin: " + accountNumber);
 }
+<!-- 5. UCAPAN & DOA (BEST WISHES) -->
+<section class="comments-section">
+  <h2>Best Wishes</h2>
+  <p class="subtitle">Sampaikan doa dan ucapan terbaik Anda</p>
+
+  <div class="comment-box">
+    <!-- Form Input -->
+    <form id="commentForm">
+      <input type="text" id="name" placeholder="Nama" required />
+      <textarea id="message" rows="3" placeholder="Ucapan" required></textarea>
+      <button type="submit" class="btn-send">Kirim</button>
+    </form>
+
+    <!-- Daftar Komentar -->
+    <div class="comments-list" id="commentsList">
+      <div class="comment-item">
