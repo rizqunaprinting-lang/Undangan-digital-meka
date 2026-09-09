@@ -7,12 +7,6 @@ body {
     color: #4a4a4a;
     text-align: center;
     
-    /* Tambahkan baris di bawah ini */
-    background-image: url('download.jpg');
-    background-size: cover;        /* Agar gambar memenuhi seluruh layar */
-    background-position: center;   /* Posisi gambar tepat di tengah */
-    background-repeat: no-repeat;  /* Agar gambar tidak berulang/berpetak */
-    background-attachment: fixed;  /* (Opsional) Agar background tidak ikut ter-scroll */
 }
 
 .hero {
@@ -178,4 +172,54 @@ h2 {
     -1px  1px 0 #ffffff,
      1px  1px 0 #ffffff;
 }
+/* Background Slide 1 (Cover Utama) */
+.hero {
+  background-image: url('bg-hero.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
 
+/* Background Slide 2 (Mempelai / Quotes) */
+.couples {
+  background-image: url('bg-couples.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+    min-height: 100vh;
+    min-height: 100dvh;
+    background-attachment: Scroll;
+}
+
+/* Background Slide 3 (Detail Acara / Akad & Resepsi) */
+.event-details {
+  background-image: url('bg-acara.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+    min-height: 100vh;
+    min-height: 100dvh;
+    background-attachment: Scroll;
+}
+
+/* Background Slide 4 (Amplop Digital) */
+.gift {
+  background-image: url('bg-gift.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+    min-height: 100vh;
+    min-height: 100dvh;
+    background-attachment: Scroll;
+}
+
+/* Background Slide 5 (Ucapan & Doa) */
+.comments-section {
+  background-image: url('bg-ucapan.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+    min-height: 100vh;
+    min-height: 100dvh;
+    background-attachment: Scroll;
+}
