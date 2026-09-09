@@ -23,3 +23,26 @@ function copyAccount(accountNumber) {
     alert("Nomor rekening berhasil disalin: " + accountNumber);
 }
 
+// 4. Kirim dan Tampilkan Komentar
+const commentForm = document.getElementById('commentForm');
+const commentsList = document.getElementById('commentsList');
+
+if (commentForm) {
+  commentForm.addEventListener('submit', function(e) {
+    e.preventDefault(); // Mencegah reload/kembali ke atas
+
+    const name = document.getElementById('name').value;
+    const message = document.getElementById('message').value;
+
+    // Buat elemen komentar baru
+    const commentItem = document.createElement('div');
+    commentItem.className = 'comment-item';
+    commentItem.innerHTML = `<strong>${name}</strong><p>${message}</p>`;
+
+    // Tambahkan ke daftar komentar
+    commentsList.appendChild(commentItem);
+
+    // Bersihkan isi form
+    commentForm.reset();
+  });
+}
