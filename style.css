@@ -174,7 +174,7 @@ h2 {
 }
 /* Background Slide 1 (Cover Utama) */
 .hero {
-  background-image: url('cover-01.png');
+  background-image: url('cover-01.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -182,7 +182,7 @@ h2 {
 
 /* Background Slide 2 (Mempelai / Quotes) */
 .couples {
-  background-image: url('slide-01.png');
+  background-image: url('slide-01.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -193,7 +193,7 @@ h2 {
 
 /* Background Slide 3 (Detail Acara / Akad & Resepsi) */
 .event-details {
-  background-image: url('slide-01.png');
+  background-image: url('slide-01.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -204,7 +204,7 @@ h2 {
 
 /* Background Slide 4 (Amplop Digital) */
 .gift {
-  background-image: url('slide-01.png');
+  background-image: url('slide-01.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -215,7 +215,7 @@ h2 {
 
 /* Background Slide 5 (Ucapan & Doa) */
 .comments-section {
-  background-image: url('slide-01.png');
+  background-image: url('slide-01.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
