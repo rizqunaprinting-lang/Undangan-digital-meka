@@ -175,7 +175,7 @@ h2 {
 }
 /* Background Slide 1 (Cover Utama) */
 .hero {
-  background-image: url('cover-01.jpg');
+  background-image: url('cover.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
