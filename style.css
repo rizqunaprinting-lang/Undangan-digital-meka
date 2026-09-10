@@ -39,7 +39,7 @@ body {
 .btn-open {
     display: inline-block;
     padding: 12px 30px;
-    margin-top: 50px;
+    margin-top: 80px;
     
     /* Warna & Tipografi */
     background-color: #8b7d6b; /* Warna gold pastel senada dengan title */
@@ -231,4 +231,71 @@ h2 {
     min-height: 100vh;
     min-height: 100dvh;
     background-attachment: Scroll;
+}
+.comments-section {
+    text-align: center;
+}
+
+.comment-box {
+    max-width: 400px; /* Batas lebar form agar rapi */
+    margin: 0 auto;   /* Membuat box posisinya rata tengah */
+}
+
+#commentForm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;        /* Jarak antar input, textarea, dan tombol */
+}
+
+#commentForm input,
+#commentForm textarea {
+    width: 100%;      /* Mengikuti lebar container comment-box */
+    box-sizing: border-box;
+}
+/* Styling Input & Textarea */
+#commentForm input,
+#commentForm textarea {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #8b7d6b;
+    border-radius: 12px;
+    background-color: rgba(255, 255, 255, 0.85);
+    font-family: 'Playfair Display', serif;
+    font-size: 0.9rem;
+    color: #4a4a4a;
+    outline: none;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+    box-sizing: border-box;
+}
+
+/* Efek saat kolom diklik/fokus */
+#commentForm input:focus,
+#commentForm textarea:focus {
+    border-color: #6e6252;
+    background-color: #ffffff;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+}
+
+/* Styling Tombol Kirim */
+.btn-send {
+    background-color: #8b7d6b;
+    color: #ffffff;
+    border: none;
+    padding: 10px 24px;
+    border-radius: 20px;
+    font-family: 'Playfair Display', serif;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+/* Efek Hover Tombol Kirim */
+.btn-send:hover {
+    background-color: #6e6252;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
