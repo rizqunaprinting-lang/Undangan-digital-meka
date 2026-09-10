@@ -29,17 +29,18 @@ body {
     background: rgba(225, 225, 225, 60%);
     border: 1px solid #e8e2d5;
     border-radius: 12px;
-    padding: 10px 20px;
-    margin: 15px auto;
-    max-width: 250px;
+    padding: 30px 20px;
+    margin: 0 auto;
+    max-width: 320px;
     box-shadow: 0 4px 10px rgba(0,0,0,0.03);
+    text-align: center;
 }
 
 /* Style Tombol Buka Undangan */
 .btn-open {
     display: inline-block;
     padding: 12px 30px;
-    margin-top: 80px;
+    margin-top: 600px;
     
     /* Warna & Tipografi */
     background-color: #8b7d6b; /* Warna gold pastel senada dengan title */
