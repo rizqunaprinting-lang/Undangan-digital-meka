@@ -25,12 +25,13 @@
     </section>
 
     <section class="couples"
-        style="min-height: 100vh; display:flex; flex-direction: column; 
+         data-aos="fade-right" style="min-height: 100vh; display:flex; 
+        flex-direction: column; 
         justify-content: center; align-items: 
             center; text-align: center;">
         
         <p style="max-width: 300px; margin: 0 auto; text-align: center;">
-  "Dan di antara tanda-tanda (kebesaran)-Nya ialah Dia menciptakan
+      "Dan di antara tanda-tanda (kebesaran)-Nya ialah Dia menciptakan
             pasangan-pasangan untukmu dari jenismu sendiri, agar kamu 
             cenderung dan merasa tenteram kepadanya, dan Dia menjadikan 
             di antaramu rasa cinta dan kasih sayang. Sesungguhnya pada 
@@ -128,5 +129,14 @@
     </audio>
 
     <script src="script.js"></script>
+          <!-- Library AOS JavaScript -->
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+
+<script>
+  AOS.init({
+    duration: 1000, // Durasi animasi dalam milidetik (1 detik)
+    once: true      // Animasi hanya jalan sekali saat di-scroll
+  });
+</script>
 </body>
 </html>
