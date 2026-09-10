@@ -202,6 +202,15 @@ h2 {
     background-attachment: Scroll;
 }
 
+.thank-you {
+  background-image: url('slide-01.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+    min-height: 100vh;
+    min-height: 100dvh;
+    background-attachment: Scroll;
+}
 /* Background Slide 4 (Amplop Digital) */
 .gift {
   background-image: url('slide-01.jpg');
