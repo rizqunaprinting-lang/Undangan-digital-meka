@@ -31,7 +31,7 @@ body {
     border-radius: 12px;
     padding: 30px 20px;
     margin: 0 auto;
-    max-width: 320px;
+    max-width: 100px;
     box-shadow: 0 4px 10px rgba(0,0,0,0.03);
     text-align: center;
 }
@@ -40,7 +40,7 @@ body {
 .btn-open {
     display: inline-block;
     padding: 12px 30px;
-    margin-top: 600px;
+    margin-top: 60px;
     
     /* Warna & Tipografi */
     background-color: #8b7d6b; /* Warna gold pastel senada dengan title */
