@@ -10,7 +10,7 @@ window.addEventListener('DOMContentLoaded', () => {
 // 2. Fungsi Buka Undangan & Autoplay Musik
 function openInvitation() {
     // Scroll ke section berikutnya secara mulus
-    document.querySelector('.couples').scrollIntoView({ behavior: 'smooth' });
+    document.querySelector('.couple-wrapper').scrollIntoView({ behavior: 'smooth' });
     
     // Putar musik
     const music = document.getElementById('bg-music');
