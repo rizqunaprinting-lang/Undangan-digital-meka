@@ -41,7 +41,42 @@ if (commentForm) {
 
     // Tambahkan ke daftar komentar
     commentsList.appendChild(commentItem);
+// 4. Hitung Mundur Waktu Pernikahan (Countdown)
+const weddingDate = new Date("2026-10-09T09:00:00").getTime();
 
+const updateCountdown = setInterval(function() {
+  const now = new Date().getTime();
+  const distance = weddingDate - now;
+
+  // Hitung Hari, Jam, Menit, Detik
+  const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+  // Ambil elemen HTML
+  const daysEl = document.getElementById("days");
+  const hoursEl = document.getElementById("hours");
+  const minutesEl = document.getElementById("minutes");
+  const secondsEl = document.getElementById("seconds");
+
+  // Update nilai angka jika elemen ditemukan
+  if (daysEl && hoursEl && minutesEl && secondsEl) {
+    daysEl.innerText = days < 10 ? "0" + days : days;
+    hoursEl.innerText = hours < 10 ? "0" + hours : hours;
+    minutesEl.innerText = minutes < 10 ? "0" + minutes : minutes;
+    secondsEl.innerText = seconds < 10 ? "0" + seconds : seconds;
+  }
+
+  // Jika waktu acara sudah lewat
+  if (distance < 0) {
+    clearInterval(updateCountdown);
+    const container = document.querySelector(".countdown-container");
+    if (container) {
+      container.innerHTML = "<p style='color:#8b7d6b; font-weight:bold;'>Acara Telah Berlangsung</p>";
+    }
+  }
+}, 1000);
     // Bersihkan isi form
     commentForm.reset();
   });
