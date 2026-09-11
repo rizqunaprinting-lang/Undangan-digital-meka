@@ -190,7 +190,7 @@ h2 {
   background-repeat: no-repeat;
     min-height: 100vh;
     min-height: 100dvh;
-  background-attachment: fixed;
+  background-attachment: scroll;
 }
 
 /* Background Slide 3 (Detail Acara / Akad & Resepsi) */
@@ -201,7 +201,7 @@ h2 {
   background-repeat: no-repeat;
     min-height: 100vh;
     min-height: 100dvh;
-  background-attachment: fixed;}
+  background-attachment: scroll;}
 
 .thank-you {
   background-image: url('Inner.jpg');
@@ -210,7 +210,7 @@ h2 {
   background-repeat: no-repeat;
     min-height: 100vh;
     min-height: 100dvh;
-  background-attachment: fixed;
+  background-attachment: scroll;
 }
 /* Background Slide 4 (Amplop Digital) */
 .gift {
@@ -220,7 +220,7 @@ h2 {
   background-repeat: no-repeat;
     min-height: 100vh;
     min-height: 100dvh;
-  background-attachment: fixed;
+  background-attachment: scroll;
 }
 
 /* Background Slide 5 (Ucapan & Doa) */
