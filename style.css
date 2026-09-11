@@ -40,7 +40,7 @@ body {
 .btn-open {
     display: inline-block;
     padding: 12px 30px;
-    margin-top: 150px;
+    margin-top: 80px;
     
     /* Warna & Tipografi */
     background-color: #8b7d6b; /* Warna gold pastel senada dengan title */
@@ -190,7 +190,7 @@ h2 {
   background-repeat: no-repeat;
     min-height: 100vh;
     min-height: 100dvh;
-    background-attachment: fixed;
+  background-attachment: fixed;
 }
 
 /* Background Slide 3 (Detail Acara / Akad & Resepsi) */
@@ -210,7 +210,7 @@ h2 {
   background-repeat: no-repeat;
     min-height: 100vh;
     min-height: 100dvh;
-    background-attachment: fixed;
+  background-attachment: fixed;
 }
 /* Background Slide 4 (Amplop Digital) */
 .gift {
