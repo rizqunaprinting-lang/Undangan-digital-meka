@@ -10,11 +10,21 @@ window.addEventListener('DOMContentLoaded', () => {
 // 2. Fungsi Buka Undangan & Autoplay Musik
 function openInvitation() {
     // Scroll ke section berikutnya secara mulus
-    document.querySelector('.couples').scrollIntoView({ behavior: 'smooth' });
-    
+    const couplesSection = document.querySelector('.couples');
+    if (couplesSection) {
+        couplesSection.scrollIntoView({ 
+            behavior: 'smooth',
+            block: 'start'
+        });
+    }
+
     // Putar musik
     const music = document.getElementById('bg-music');
-    music.play();
+    if (music) {
+        music.play().catch(error => {
+            console.log("Autoplay dicegah browser:", error);
+        });
+    }
 }
 
 // 3. Salin Nomor Rekening
