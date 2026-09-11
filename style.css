@@ -197,12 +197,7 @@ h2 {
   background-repeat: no-repeat;
     min-height: 100vh;
     min-height: 100dvh;
-  background-attachment: scroll;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-item: center;
-}
+  background-attachment: scroll;}
 
 /* Background Slide 3 (Detail Acara / Akad & Resepsi) */
 .event-details {
