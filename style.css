@@ -191,7 +191,7 @@ h2 {
 
 /* Background Slide 2 (Mempelai / Quotes) */
 .couple-profile {
-  background-image: url('inner1.jpg');
+  background-image: url('back.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -201,7 +201,7 @@ h2 {
 
 /* Background Slide 3 (Detail Acara / Akad & Resepsi) */
 .event-details {
-  background-image: url('inner1.jpg');
+  background-image: url('back.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -210,7 +210,7 @@ h2 {
   background-attachment: scroll;}
 
 .thank-you {
-  background-image: url('inner1.jpg');
+  background-image: url('back.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -220,7 +220,7 @@ h2 {
 }
 /* Background Slide 4 (Amplop Digital) */
 .gift {
-  background-image: url('inner1.jpg');
+  background-image: url('inner.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
