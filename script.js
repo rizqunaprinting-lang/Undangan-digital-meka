@@ -19,8 +19,7 @@ function openInvitation() {
             behavior: 'smooth',
             block: 'start'
         });
-    }
-
+        
     // Putar musik
     const music = document.getElementById('bg-music');
     if (music) {
@@ -29,13 +28,11 @@ function openInvitation() {
         });
     }
 }
-
 // 3. Salin Nomor Rekening
 function copyAccount(accountNumber) {
     navigator.clipboard.writeText(accountNumber);
     alert("Nomor rekening berhasil disalin: " + accountNumber);
 }
-
 // 4. Kirim dan Tampilkan Komentar
 document.addEventListener('DOMContentLoaded', () => {
     const commentForm = document.getElementById('commentForm');
