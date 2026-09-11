@@ -44,7 +44,7 @@ if (commentForm) {
 
       
 // 4. Hitung Mundur Waktu Pernikahan (Countdown)
-const weddingDate = new Date(2026, 9, 9, 9, 0, 0).getTime();
+const weddingDate = new Date(2026, 9, 9, 0, 0, 0).getTime();
 
 const updateCountdown = setInterval(function() {
   const now = new Date().getTime();
