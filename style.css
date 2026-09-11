@@ -299,36 +299,3 @@ h2 {
     transform: translateY(-2px);
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
-/* ==================================
-   STYLE COUNTDOWN TIMER
-================================== */
-.countdown-container {
-  display: flex;
-  justify-content: center;
-  gap: 10px;
-  margin: 20px 0;
-}
-
-.countdown-item {
-  background: rgba(255, 255, 255, 0.7);
-  backdrop-filter: blur(4px);
-  border: 1px solid rgba(138, 120, 102, 0.3);
-  padding: 8px 12px;
-  border-radius: 10px;
-  min-width: 55px;
-  text-align: center;
-}
-
-.countdown-item span {
-  font-size: 1.2rem;
-  font-weight: bold;
-  color: #8b7d6b; /* Disesuaikan dengan warna tombol kamu */
-  display: block;
-}
-
-.countdown-item p {
-  font-size: 0.7rem;
-  margin: 0;
-  color: #555;
-  text-transform: uppercase;
-}
