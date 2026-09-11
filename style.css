@@ -299,3 +299,32 @@ h2 {
     transform: translateY(-2px);
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
+.countdown-container {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin: 15px 0;
+}
+
+.countdown-box {
+    background: rgba(255, 255, 255, 0.85);
+    border: 1px solid #e0a367;
+    border-radius: 8px;
+    padding: 8px 12px;
+    min-width: 50px;
+    text-align: center;
+}
+
+.countdown-box span {
+    display: block;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #e07a38;
+}
+
+.countdown-box p {
+    margin: 0;
+    font-size: 0.7rem;
+    color: #666;
+    text-transform: uppercase;
+}
