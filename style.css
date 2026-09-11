@@ -316,7 +316,7 @@ h2 {
 
 .countdown-box {
     background: rgba(255, 255, 255, 0.85);
-    border: 1px solid #e0a367;
+    border: 1px solid #2b4f3b;
     border-radius: 8px;
     padding: 8px 12px;
     min-width: 50px;
@@ -327,12 +327,12 @@ h2 {
     display: block;
     font-size: 1.2rem;
     font-weight: bold;
-    color: #e07a38;
+    color: #2b4f3b;
 }
 
 .countdown-box p {
     margin: 0;
     font-size: 0.7rem;
-    color: #666;
+    color: #000000;
     text-transform: uppercase;
 }
