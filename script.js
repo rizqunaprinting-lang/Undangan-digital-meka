@@ -59,36 +59,76 @@ window.addEventListener('DOMContentLoaded', () => {
 });
 document.addEventListener('DOMContentLoaded', function() {
 
-    // Tempelkan kode event listener form di sini
-    document.getElementById('commentForm').addEventListener('submit', function(e) {
-        e.preventDefault(); // Mencegah reload
+    // ==========================================
+// 1. Inisialisasi Firebase
+// (Ganti value berikut sesuai data dari Firebase Console Anda)
+// ==========================================
+const firebaseConfig = {
+  apiKey: "API_KEY_ANDA",
+  authDomain: "PROJECT_ANDA.firebaseapp.com",
+  databaseURL: "https://PROJECT_ANDA-default-rtdb.firebaseio.com",
+  projectId: "PROJECT_ANDA",
+  storageBucket: "PROJECT_ANDA.appspot.com",
+  messagingSenderId: "xxxxxxxxx",
+  appId: "xxxxxxxxx"
+};
 
-        const nameInput = document.getElementById('name');
-        const messageInput = document.getElementById('message');
-        
-        const nameValue = nameInput.value;
-        const messageValue = messageInput.value;
+// Inisialisasi Firebase App & Realtime Database
+firebase.initializeApp(firebaseConfig);
+const db = firebase.database();
 
-        const commentList = document.getElementById('commentsList');
-        const newComment = document.createElement('div');
-        newComment.classList.add('comment-item');
-        
-        newComment.innerHTML = `
-    <div class="comment-header">
-        <strong class="comment-name">${nameValue}</strong>
-        <span class="comment-time">🕒 Baru saja</span>
-    </div>
-    <p class="comment-text">${messageValue}</p>
-    <div class="comment-action">
-        <span>➥ Reply</span>
-    </div>
-`;
+// ==========================================
+// 2. Fungsi Kirim Komentar ke Firebase Cloud
+// ==========================================
+document.getElementById('commentForm').addEventListener('submit', function(e) {
+  e.preventDefault(); // Mencegah reload halaman
 
-        commentList.appendChild(newComment);
+  const nameInput = document.getElementById('name');
+  const messageInput = document.getElementById('message');
 
-        // Reset input
-        nameInput.value = '';
-        messageInput.value = '';
+  // Kirim data baru ke database node 'comments'
+  db.ref('comments').push({
+    name: nameInput.value,
+    message: messageInput.value,
+    timestamp: Date.now()
+  });
+
+  // Reset input form setelah dikirim
+  nameInput.value = '';
+  messageInput.value = '';
+});
+
+// ==========================================
+// 3. Menampilkan Komentar di Semua Device secara Realtime
+// ==========================================
+db.ref('comments').on('value', function(snapshot) {
+  const commentList = document.getElementById('commentsList');
+  commentList.innerHTML = ''; // Reset kontainer agar data tidak duplikat
+
+  const data = snapshot.val();
+
+  if (data) {
+    // Loop mengambil setiap komentar yang tersimpan
+    Object.keys(data).forEach(function(key) {
+      const item = data[key];
+
+      const newComment = document.createElement('div');
+      newComment.classList.add('comment-item');
+
+      // Template HTML disesuaikan persis dengan struktur CSS & class yang Anda miliki
+      newComment.innerHTML = `
+        <div class="comment-header">
+          <strong class="comment-name">${item.name}</strong>
+          <span class="comment-time">Baru saja</span>
+        </div>
+        <p class="comment-text">${item.message}</p>
+        <div class="comment-action">
+          <span>Reply</span>
+        </div>
+      `;
+
+      // Menampilkan komentar terbaru di posisi paling atas
+      commentList.prepend(newComment);
     });
-
+  }
 });
