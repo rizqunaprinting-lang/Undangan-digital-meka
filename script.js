@@ -60,38 +60,76 @@ window.addEventListener('DOMContentLoaded', () => {
 document.addEventListener('DOMContentLoaded', function() {
 
     // ==========================================
-// 1. Inisialisasi Firebase
-// (Ganti value berikut sesuai data dari Firebase Console Anda)
+// 1. Inisialisasi Firebase dengan Data Anda
 // ==========================================
 const firebaseConfig = {
-  apiKey: "API_KEY_ANDA",
-  authDomain: "PROJECT_ANDA.firebaseapp.com",
-  databaseURL: "https://PROJECT_ANDA-default-rtdb.firebaseio.com",
-  projectId: "PROJECT_ANDA",
-  storageBucket: "PROJECT_ANDA.appspot.com",
-  messagingSenderId: "xxxxxxxxx",
-  appId: "xxxxxxxxx"
+  apiKey: "AIzaSyBcxTpPfSMB8qwHXdPZCpaIC7qjWh0gdyw",
+  authDomain: "undangan-meka.firebaseapp.com",
+  projectId: "undangan-meka",
+  storageBucket: "undangan-meka.firebasestorage.app",
+  messagingSenderId: "1038306527608",
+  appId: "1:1038306527608:web:531864c7a92e375a44608d",
+  measurementId: "G-Y5MR4Z0DD3",
+  databaseURL: "https://undangan-meka-default-rtdb.firebaseio.com" // Tambahkan URL Realtime Database
 };
 
-// Inisialisasi Firebase App & Realtime Database
+// Inisialisasi App dan Realtime Database
 firebase.initializeApp(firebaseConfig);
 const db = firebase.database();
 
 // ==========================================
-// 2. Fungsi Kirim Komentar ke Firebase Cloud
+// 2. Simpan Ucapan ke Database Cloud
 // ==========================================
 document.getElementById('commentForm').addEventListener('submit', function(e) {
-  e.preventDefault(); // Mencegah reload halaman
+  e.preventDefault();
 
   const nameInput = document.getElementById('name');
   const messageInput = document.getElementById('message');
 
-  // Kirim data baru ke database node 'comments'
+  // Push data ke Realtime Database
   db.ref('comments').push({
     name: nameInput.value,
     message: messageInput.value,
     timestamp: Date.now()
   });
+
+  // Reset form input
+  nameInput.value = '';
+  messageInput.value = '';
+});
+
+// ==========================================
+// 3. Tampilkan Ucapan di Semua Device Secara Realtime
+// ==========================================
+db.ref('comments').on('value', function(snapshot) {
+  const commentList = document.getElementById('commentsList');
+  commentList.innerHTML = ''; // Kosongkan daftar agar tidak terjadi duplikasi
+
+  const data = snapshot.val();
+
+  if (data) {
+    Object.keys(data).forEach(function(key) {
+      const item = data[key];
+
+      const newComment = document.createElement('div');
+      newComment.classList.add('comment-item');
+
+      newComment.innerHTML = `
+        <div class="comment-header">
+          <strong class="comment-name">${item.name}</strong>
+          <span class="comment-time">Baru saja</span>
+        </div>
+        <p class="comment-text">${item.message}</p>
+        <div class="comment-action">
+          <span>Reply</span>
+        </div>
+      `;
+
+      // Menampilkan komentar terbaru di atas
+      commentList.prepend(newComment);
+    });
+  }
+});
 
   // Reset input form setelah dikirim
   nameInput.value = '';
