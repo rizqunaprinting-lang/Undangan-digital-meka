@@ -160,9 +160,18 @@ db.ref('comments').on('value', function(snapshot) {
           <span class="comment-time">Baru saja</span>
         </div>
         <p class="comment-text">${item.message}</p>
-        <div class="comment-action">
-          <span>Reply</span>
+        
+        <!-- Tombol Reply dengan onclick -->
+        <button class="comment-reply" onclick="toggleReplyForm('${key}')">Reply</button>
+
+        <!-- Form Reply (tersembunyi secara bawaan) -->
+        <div class="reply-form-container" id="reply-form-${key}" style="display: none;">
+          <input type="text" class="reply-input" placeholder="Tulis balasan..." id="reply-input-${key}">
+          <button class="btn-send-reply" onclick="submitReply('${key}')">Kirim</button>
         </div>
+
+        <!-- Wadah Tempat Hasil Balasan Ditampilkan -->
+        <div class="replies-list" id="replies-list-${key}"></div>
       `;
 
       // Menampilkan komentar terbaru di posisi paling atas
@@ -170,3 +179,42 @@ db.ref('comments').on('value', function(snapshot) {
     });
   }
 });
+// Fungsi untuk menampilkan/menyembunyikan form reply saat tombol Reply diklik
+function toggleReplyForm(key) {
+  const form = document.getElementById(`reply-form-${key}`);
+  if (form.style.display === "none" || form.style.display === "") {
+    form.style.display = "flex";
+  } else {
+    form.style.display = "none";
+  }
+}
+
+// Fungsi untuk mengirim balasan dan menyimpannya ke Firebase
+function submitReply(key) {
+  const input = document.getElementById(`reply-input-${key}`);
+  const replyText = input.value.trim();
+
+  if (replyText === "") return;
+
+  // 1. Simpan ke Firebase (ganti 'comments' jika nama node database Anda berbeda)
+  const replyRef = firebase.database().ref('comments/' + key + '/replies');
+  
+  replyRef.push({
+    name: 'Admin',
+    message: replyText,
+    timestamp: Date.now()
+  }).then(() => {
+    // 2. Tampilkan balasan di layar setelah berhasil terkirim
+    const repliesContainer = document.getElementById(`replies-list-${key}`);
+    const newReply = document.createElement("div");
+    newReply.className = "reply-item";
+    newReply.innerHTML = `<strong>Anda:</strong> ${replyText}`;
+    repliesContainer.appendChild(newReply);
+
+    // 3. Bersihkan input & sembunyikan form
+    input.value = "";
+    toggleReplyForm(key);
+  }).catch((error) => {
+    console.error("Gagal menyimpan balasan: ", error);
+  });
+}
