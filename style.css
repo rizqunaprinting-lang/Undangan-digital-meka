@@ -343,29 +343,27 @@ h2 {
 }
 
 .comment-header {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    margin-bottom: 4px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 4px;
 }
 
 .comment-name {
-    color: #00d285; /* Warna hijau untuk nama */
-    font-weight: bold;
-}
-
-.comment-time {
-    font-size: 12px;
-    color: #46754b; /* Warna abu-abu untuk waktu */
+  color: #00d285;
+  font-weight: bold;
+  background-color: rgba(255, 255, 255, 0.7); /* Background putih transparan */
+  padding: 4px 8px;
+  border-radius: 6px;
+  display: inline-block; /* Agar background mengikuti lebar nama saja */
 }
 
 .comment-text {
-    margin: 4px 0 8px 0;
-    color: #000000; /* Sesuaikan warna teks ucapan */
-}
-
-.comment-action {
-    font-size: 13px;
-    color: #46754b;
-    cursor: pointer;
+  display: block; /* Memastikan teks selalu turun ke baris baru di bawah nama */
+  margin: 6px 0 8px 0;
+  color: #000000;
+  background-color: rgba(255, 255, 255, 0.7); /* Background putih transparan */
+  padding: 8px 12px;
+  border-radius: 8px;
+  width: fit-content; /* Agar lebar background menyesuaikan panjang teks */
 }
