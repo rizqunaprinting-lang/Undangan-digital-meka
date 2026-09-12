@@ -356,16 +356,16 @@ h2 {
 
 .comment-time {
     font-size: 12px;
-    color: #aaa; /* Warna abu-abu untuk waktu */
+    color: #46754b; /* Warna abu-abu untuk waktu */
 }
 
 .comment-text {
     margin: 4px 0 8px 0;
-    color: #fff; /* Sesuaikan warna teks ucapan */
+    color: #000000; /* Sesuaikan warna teks ucapan */
 }
 
 .comment-action {
     font-size: 13px;
-    color: #ccc;
+    color: #46754b;
     cursor: pointer;
 }
