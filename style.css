@@ -367,3 +367,31 @@ h2 {
   border-radius: 8px;
   width: fit-content; /* Agar lebar background menyesuaikan panjang teks */
 }
+/* Memperkecil teks waktu (time) */
+.comment-time {
+  font-size: 11px; /* Ukuran teks diperkecil */
+  opacity: 0.8;    /* Sedikit lebih transparan agar lebih halus */
+}
+
+/* Mengatur tombol reply ke bawah comment-text dengan background abu-abu */
+.comment-reply, 
+button.comment-reply {
+  display: inline-block; /* Memastikan elemen merespons padding dan margin */
+  margin-top: 6px;       /* Jarak ke bawah dari comment-text */
+  font-size: 11px;       /* Ukuran teks reply diperkecil */
+  color: #333333;        /* Warna teks reply */
+  
+  /* Kolom / Box latar belakang abu-abu */
+  background-color: #e0e0e0; /* Warna abu-abu */
+  padding: 4px 10px;          /* Jarak dalam (atas/bawah 4px, kiri/kanan 10px) */
+  border-radius: 6px;         /* Sudut membulat */
+  
+  text-decoration: none;
+  cursor: pointer;
+  border: none;
+}
+
+/* Efek saat tombol reply di-hover (opsional) */
+.comment-reply:hover {
+  background-color: #d0d0d0;
+}
