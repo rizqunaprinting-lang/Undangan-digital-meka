@@ -171,13 +171,14 @@ db.ref('comments').on('value', function(snapshot) {
 
         <!-- tempat balasan muncul -->
         <div class="replies-list" id="replies-list-${key}"></div>
-      `;
 
-      // Menampilkan komentar terbaru di posisi paling atas
       commentList.prepend(newComment);
+`;
+      
     });
   }
 });
+
 // Fungsi untuk menampilkan/menyembunyikan form reply saat tombol Reply diklik
 function toggleReplyForm(key) {
   const form = document.getElementById(`reply-form-${key}`);
