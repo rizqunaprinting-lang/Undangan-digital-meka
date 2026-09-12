@@ -395,3 +395,37 @@ button.comment-reply {
 .comment-reply:hover {
   background-color: #d0d0d0;
 }
+.reply-form-container {
+  display: flex;
+  gap: 6px;
+  margin-top: 6px;
+}
+.reply-input {
+  flex: 1;
+  padding: 4px 8px;
+  font-size: 11px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+.btn-send-reply {
+  background: #8c7a6b;
+  color: #fff;
+  border: none;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 11px;
+  cursor: pointer;
+}
+.replies-list {
+  margin-left: 15px;
+  margin-top: 6px;
+  border-left: 2px solid rgba(0,0,0,0.1);
+  padding-left: 8px;
+}
+.reply-item {
+  background: rgba(255, 255, 255, 0.6);
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 11px;
+  margin-top: 4px;
+}
