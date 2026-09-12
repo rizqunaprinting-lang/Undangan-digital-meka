@@ -46,11 +46,14 @@ function updateCountdown() {
 
 setInterval(updateCountdown, 1000);
 updateCountdown();
-// Mengambil parameter 'to' dari URL (URL Search Params)
-const urlParams = new URLSearchParams(window.location.search);
-const guestName = urlParams.get('to');
 
-// Jika parameter 'to' ada di link, ubah teks nama tamu
-if (guestName) {
+// Mengambil parameter 'to' dari URL (URL Search Params)
+window.addEventListener('DOMContentLoaded', () => {
+  const urlParams = new URLSearchParams(window.location.search);
+  const guestName = urlParams.get('to');
+
+  // Jika parameter 'to' ada di link, ubah teks nama tamu
+  if (guestName) {
     document.getElementById('guest-name').innerText = decodeURIComponent(guestName);
-}
+  }
+});
