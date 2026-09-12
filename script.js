@@ -74,9 +74,15 @@ document.addEventListener('DOMContentLoaded', function() {
         newComment.classList.add('comment-item');
         
         newComment.innerHTML = `
-            <strong>${nameValue}</strong>
-            <p>${messageValue}</p>
-        `;
+    <div class="comment-header">
+        <strong class="comment-name">${nameValue}</strong>
+        <span class="comment-time">🕒 Baru saja</span>
+    </div>
+    <p class="comment-text">${messageValue}</p>
+    <div class="comment-action">
+        <span>➥ Reply</span>
+    </div>
+`;
 
         commentList.appendChild(newComment);
 
