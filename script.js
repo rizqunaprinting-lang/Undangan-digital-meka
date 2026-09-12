@@ -153,7 +153,6 @@ db.ref('comments').on('value', function(snapshot) {
       const newComment = document.createElement('div');
       newComment.classList.add('comment-item');
 
-      // Template HTML disesuaikan persis dengan struktur CSS & class yang Anda miliki
       newComment.innerHTML = `
         <div class="comment-header">
           <strong class="comment-name">${item.name}</strong>
@@ -161,16 +160,16 @@ db.ref('comments').on('value', function(snapshot) {
         </div>
         <p class="comment-text">${item.message}</p>
         
-        <!-- Tombol Reply dengan onclick -->
+        <!-- PENTING: Gunakan <button class="comment-reply"> -->
         <button class="comment-reply" onclick="toggleReplyForm('${key}')">Reply</button>
 
-        <!-- Form Reply (tersembunyi secara bawaan) -->
+        <!-- Form Input Reply (Awalnya tersembunyi) -->
         <div class="reply-form-container" id="reply-form-${key}" style="display: none;">
           <input type="text" class="reply-input" placeholder="Tulis balasan..." id="reply-input-${key}">
           <button class="btn-send-reply" onclick="submitReply('${key}')">Kirim</button>
         </div>
 
-        <!-- Wadah Tempat Hasil Balasan Ditampilkan -->
+        <!-- tempat balasan muncul -->
         <div class="replies-list" id="replies-list-${key}"></div>
       `;
 
