@@ -57,3 +57,32 @@ window.addEventListener('DOMContentLoaded', () => {
     document.getElementById('guest-name').innerText = decodeURIComponent(guestName);
   }
 });
+document.addEventListener('DOMContentLoaded', function() {
+
+    // Tempelkan kode event listener form di sini
+    document.getElementById('commentForm').addEventListener('submit', function(e) {
+        e.preventDefault(); // Mencegah reload
+
+        const nameInput = document.getElementById('name');
+        const messageInput = document.getElementById('message');
+        
+        const nameValue = nameInput.value;
+        const messageValue = messageInput.value;
+
+        const commentList = document.getElementById('commentsList');
+        const newComment = document.createElement('div');
+        newComment.classList.add('comment-item');
+        
+        newComment.innerHTML = `
+            <strong>${nameValue}</strong>
+            <p>${messageValue}</p>
+        `;
+
+        commentList.appendChild(newComment);
+
+        // Reset input
+        nameInput.value = '';
+        messageInput.value = '';
+    });
+
+});
